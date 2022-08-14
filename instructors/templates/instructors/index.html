@@ -1,0 +1,14 @@
+{% extends "instructors/base.html" %} {% load static %}{% block title %} Instructors
+{% endblock%} {% block content%}
+<div class="container">
+  <h1>Instructors</h1>
+  <ul>
+    {% for instructor in instructors %}
+    <li>{{ instructor.instructor_name}} ; {{instructor.instructor_short_id}} ; {{ instructor.instructor_course }}</li>
+    <!--
+    <li>{{ instructor.instructor_address }}</li>
+    <li>{{ instructor.instructor_email }}</li> -->
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %} {% block jsfiles %} {% endblock jsfiles %}

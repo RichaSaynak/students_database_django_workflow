@@ -1,0 +1,14 @@
+{% extends "courses/base.html" %} {% load static %}{% block title %} Courses
+{% endblock%} {% block content%}
+<div class="container">
+  <h1>Courses</h1>
+  <ul>
+    {% for course in courses %}
+    <li>{{ course.course_name}}</li>
+    <!--
+    <li>{{ Course.Course_address }}</li>
+    <li>{{ Course.Course_email }}</li> -->
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %} {% block jsfiles %} {% endblock jsfiles %}

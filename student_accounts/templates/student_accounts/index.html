@@ -1,0 +1,11 @@
+{% extends "student_accounts/base.html" %} {% load static %}{% block title %} Student_Accounts
+{% endblock%} {% block content%}
+<div class="container">
+  <h1>Student_Accounts</h1>
+  <ul>
+    {% for student_account in student_accounts %}
+    <li>{{ student_account.username }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %} {% block jsfiles %} {% endblock jsfiles %}
