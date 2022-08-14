@@ -21,6 +21,19 @@ jobs:
 
     # The runner environment to use
     runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: github_actions
+        ports:
+          - 5432:5432
+        
+        options: --health-cmd pg_isready -- health-interval 10s --health-timeout 5s --health-retries
+    
 
     # Steps mostly contain CLI commands (via "run") and actions (via "uses")
     # Each step begins with a hyphen -
@@ -39,8 +52,7 @@ jobs:
         with:
           python-version: 3.9  
       
-      - name: psycopg2 prerequisites
-        run: sudo apt-get install libpq-dev
+
         
       # Runs a set of commands to install dependencies in the runner environment
       - name: Install dependencies
