@@ -12,7 +12,7 @@ from courses.models import Course
 # Unit Testing
 def test_homepage_access():
     url = reverse('home_student')
-    assert url == "/students/"
+    assert url == "/"
 
 
 

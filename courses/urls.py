@@ -6,7 +6,7 @@ from django.conf import settings
 
 
 urlpatterns = [
-    path('', courses_views.index, name='index'),
+    # path('', courses_views.index, name='index'),
     path('', courses_views.index1.as_view(), name='home_course'),
     path('api/courses/', courses_views.course_list),
     path('api/courses/<int:pk>/', courses_views.course_detail),
